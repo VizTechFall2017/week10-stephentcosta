@@ -33,7 +33,7 @@ var projection = d3.geoAlbers()
 
 var areaLookup = d3.map();
 console.log(areaLookup);
-var colorScale = d3.scaleLinear().range(['white','#00a6b4']);
+var colorScale = d3.scaleLinear().range(['#F2F2F2','#FB4D42']);
 
 var div = d3.select("body")
 		    .append("div")
@@ -88,16 +88,16 @@ queue()
             .attr('fill', function(d){
                 return colorScale(areaLookup.get(d.properties.Name));
             })
-            .attr('stroke','#003c50')
+            .attr('stroke','#FB4D42')
             .attr('stroke-width',2)
               .on("mouseover", function(d) {
 console.log(areaLookup.get(d.properties.Name));
                   	div.transition()
                     	   .duration(200)
-                         .style("opacity", .9);
-                         div.text(d.properties.Name + areaLookup.get(d.properties.Name))
-                         .style("left", (d3.event.pageX) + "px")
-                         .style("top", (d3.event.pageY - 28) + "px");
+                         .style("opacity", 1);
+                         div.html(d.properties.Name  +  "<br/>" + areaLookup.get(d.properties.Name))
+                         .style("left", (d3.event.pageX - 80) + "px")
+                         .style("top", (d3.event.pageY - 80) + "px");
           	})
 
               // fade out tooltip on mouse out
@@ -121,13 +121,13 @@ console.log(areaLookup.get(d.properties.Name));
                 var pieX = width/2 - marginLeft;
                 var pieY = height/2 - marginTop;
 
-                var pieGroup = svg.append('g')
+                var pieGroup = svg2.append('g')
                     .attr('transform', 'translate(' + pieX + ',' + pieY + ')');
 
                 //set up scales to position circles using the data
                 var scaleColor = d3.scaleOrdinal()
                     .domain(["16-19", "20-24", "25-34", "35-44", "45-54", "55-64","65+"])
-                    .range(["#00a6b4","#ec008c","#6a4ea0","#ffcb05","#ee5223","#aaea0c","#cccccc"]);
+                    .range(["#BB3931","#7B2620","#FB4D42","#3C1210","#E1453B","#E1593B","#E17F6C"]);
                 //var scaleY = d3.scaleLinear().domain([0,1200]).range([400, 0]);  //remember that 0,0 is at the top of the screen! 300 is the lowest value on the y axis
 
                 var nestedData = [];
@@ -155,11 +155,11 @@ console.log(areaLookup.get(d.properties.Name));
 
                     var loadData = dataIn;
 
-                    svg2.append('text')
-                        .text('Age Distribution')
-                        .attr('transform','translate(300, 20)')
-                        .attr('text-anchor','middle')
-                        .attr('fill', 'white');
+                    // svg2.append('text')
+                    //     .text('Age Distribution')
+                    //     .attr('transform','translate(300, 20)')
+                    //     .attr('text-anchor','middle')
+                    //     .attr('fill', 'white');
 
 
 
@@ -179,7 +179,9 @@ console.log(areaLookup.get(d.properties.Name));
                         .attr("transform", function(d) {return "translate(" + labelArc.centroid(d) + ")"; })
                         .attr("dy", ".35em")
                         .attr('text-anchor','middle')
-                        .attr('fill', 'white')
+                        .attr('fill', '#FB4D42')
+                        .attr('font-family', 'Helvetica')
+                        .attr('font-weight', 'Bold')
                         .text(function(d) { return d.data.age; });
                 });
 

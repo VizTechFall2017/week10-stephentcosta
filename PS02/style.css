@@ -1,11 +1,11 @@
 .svgBox {
     width: 500px;
     height: 500px;
-    background-color: #003c50;
+    background-color: #ffffff;
 }
 
 .svgBox2{
-  
+    background-color: #ffffff;
 }
 
 div {
@@ -13,7 +13,7 @@ div {
 }
 
 div.tooltip {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
   position: absolute;
 	text-align: center;
   vertical-align: middle;
@@ -27,8 +27,8 @@ div.tooltip {
 }
 
 .header {
-  font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  font-family: Helvetica, sans-serif;
+  color: #FB4D42;
   font-size: 32pt;
   width:100vw;
   padding: 20px;
@@ -36,9 +36,17 @@ div.tooltip {
 }
 
 body {
-  background-color: #003c50;
+  background-color: #ffffff;
 }
 
 hr {
-  border-color: #00a6b4;
+  border-color: #FB4D42;
+}
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  color: #FB4D42;
+  font-weight: bold;
+  font-size: 18pt;
+  z-index: -1;
 }
