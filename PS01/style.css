@@ -1,7 +1,52 @@
-.left {
-background-color: #000;
+.svgBox {
+    width: 500px;
+    height: 500px;
+    background-color: #ffffff;
 }
 
-.right {
-background-color: #000;
+.svgBox2{
+    background-color: #ffffff;
+}
+
+div {
+  float: left;
+}
+
+div.tooltip {
+  font-family: Helvetica, sans-serif;
+  position: absolute;
+	text-align: center;
+  vertical-align: middle;
+	width: auto;
+	height: 30px;
+	padding: 5px;
+	background: white;
+	border: 1px;
+	border-radius: 2;
+	pointer-events: none;
+}
+
+.header {
+  font-family: Helvetica, sans-serif;
+  color: #FB4D42;
+  font-size: 32pt;
+  width:100vw;
+  padding: 20px;
+  text-align: center;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+hr {
+  border-color: #FB4D42;
+}
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  color: #FB4D42;
+  font-weight: bold;
+  font-size: 18pt;
+  z-index: -1;
 }
